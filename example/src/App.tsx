@@ -1,31 +1,50 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'vision-camera-base64';
+import { StyleSheet, View, Text, Dimensions } from 'react-native';
+import { frameToBase64 } from 'vision-camera-base64';
+import { Camera, useCameraDevices, useFrameProcessor } from 'react-native-vision-camera';
 
+const dimensions = Dimensions.get("screen")
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [hasPermission, setHasPermission] = React.useState(false);
+  const devices = useCameraDevices();
+  const device = devices.back;
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+      (async () => {
+          const status = await Camera.requestCameraPermission();
+          setHasPermission(status === 'authorized');
+      })();
   }, []);
 
-  return (
+  const process = useFrameProcessor((frame) => {
+      'worklet'
+      // console.log(frame)
+     console.log(frameToBase64(frame).length);
+  }, [])
+
+  return device != null && hasPermission ? (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+        <Camera
+            style={styles.camera}
+            isActive={true}
+            device={device}
+            frameProcessor={process}
+            frameProcessorFps={1}
+        />
     </View>
-  );
+) : (
+  <Text>Camera not found</Text>
+)
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#ececec',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  camera: {
+      width: dimensions.width,
+      height: dimensions.height,
   },
 });
