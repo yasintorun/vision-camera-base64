@@ -1,6 +1,9 @@
 # vision-camera-base64
 
-Frame to base64 format in vision camera
+A simple VisionCamera FrameProcessor plugin. 
+Convert the frame to base64 string format.
+
+__Note:__ This plugin is only string and not include `data:image/blabla/;base64,`
 
 ## Installation
 
@@ -8,14 +11,27 @@ Frame to base64 format in vision camera
 npm install vision-camera-base64
 ```
 
+Add this line to `babel.config.js`
+
+```json
+[
+    'react-native-reanimated/plugin',
+    {
+        globals: ['__frameToBase64'],
+    },
+],
+```
+
 ## Usage
 
 ```js
-import { multiply } from 'vision-camera-base64';
+import { frameToBase64 } from 'vision-camera-base64';
 
 // ...
-
-const result = await multiply(3, 7);
+const process = useFrameProcessor((frame) => {
+    'worklet'
+    const imageAsBase64 = frameToBase64(frame)
+}, [])
 ```
 
 ## Contributing
@@ -28,4 +44,4 @@ MIT
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob) 💜

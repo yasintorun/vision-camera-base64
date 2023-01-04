@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import 'react-native-reanimated'
 import { StyleSheet, View, Text, Dimensions } from 'react-native';
 import { frameToBase64 } from 'vision-camera-base64';
 import { Camera, useCameraDevices, useFrameProcessor } from 'react-native-vision-camera';
