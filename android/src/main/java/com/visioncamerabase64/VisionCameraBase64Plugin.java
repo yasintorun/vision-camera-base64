@@ -3,7 +3,7 @@ package com.visioncamerabase64;
 import androidx.camera.core.ImageProxy;
 import com.mrousavy.camera.frameprocessor.FrameProcessorPlugin;
 
-public class Base64FrameProcessorPlugin extends FrameProcessorPlugin {
+public class VisionCameraBase64Plugin extends FrameProcessorPlugin {
 
   @Override
   public Object callback(ImageProxy image, Object[] params) {
@@ -11,7 +11,7 @@ public class Base64FrameProcessorPlugin extends FrameProcessorPlugin {
     return null;
   }
 
-  Base64FrameProcessorPlugin() {
+  VisionCameraBase64Plugin() {
     super("frameToBase64");
   }
 }
