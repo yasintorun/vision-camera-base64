@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E555C0D2413F4C50049A1A2 /* VisionCameraBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* VisionCameraBase64.m */; };
-		F4FF95D7245B92E800C19C63 /*  VisionCameraBase64.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  VisionCameraBase64.swift */; };
+		F4FF95D7245B92E800C19C63 /* VisionCameraBase64Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* VisionCameraBase64Plugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +24,9 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libVisionCameraBase64.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVisionCameraBase64.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5891CC2AC0600A0062D /* VisionCameraBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisionCameraBase64.m; sourceTree = "<group>"; };
+		BFFA8B162967F009006AB915 /* VisionCameraBase64Plugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VisionCameraBase64Plugin.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* VisionCameraBase64-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VisionCameraBase64-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* VisionCameraBase64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionCameraBase64.swift; sourceTree = "<group>"; };
+		F4FF95D6245B92E800C19C63 /* VisionCameraBase64Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionCameraBase64Plugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +51,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				F4FF95D6245B92E800C19C63 /* VisionCameraBase64.swift */,
-				B3E7B5891CC2AC0600A0062D /* VisionCameraBase64.m */,
+				BFFA8B162967F009006AB915 /* VisionCameraBase64Plugin.m */,
+				F4FF95D6245B92E800C19C63 /* VisionCameraBase64Plugin.swift */,
 				F4FF95D5245B92E700C19C63 /* VisionCameraBase64-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
@@ -116,8 +115,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4FF95D7245B92E800C19C63 /* VisionCameraBase64.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* VisionCameraBase64.m in Sources */,
+				F4FF95D7245B92E800C19C63 /* VisionCameraBase64Plugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

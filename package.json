@@ -123,6 +123,7 @@
       "@react-native-community",
       "prettier"
     ],
+    "ignorePatterns": ["**/example/**"],
     "rules": {
       "prettier/prettier": [
         "error",

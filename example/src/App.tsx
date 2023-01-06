@@ -1,15 +1,15 @@
 import * as React from 'react';
-import 'react-native-reanimated'
-import { StyleSheet, View, Text, Dimensions } from 'react-native';
-import { frameToBase64 } from 'vision-camera-base64';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import 'react-native-reanimated';
 import { Camera, useCameraDevices, useFrameProcessor } from 'react-native-vision-camera';
+import { frameToBase64 } from 'vision-camera-base64';
 
-const dimensions = Dimensions.get("screen")
+const dimensions = Dimensions.get("screen");
 export default function App() {
   const [hasPermission, setHasPermission] = React.useState(false);
   const devices = useCameraDevices();
-  const device = devices.back;
-
+  const device = devices.back ?? devices.external ?? devices.front ?? devices.unspecified;
+  console.log(device, devices, hasPermission);
   React.useEffect(() => {
       (async () => {
           const status = await Camera.requestCameraPermission();
@@ -18,7 +18,7 @@ export default function App() {
   }, []);
 
   const process = useFrameProcessor((frame) => {
-      'worklet'
+      'worklet';
       // console.log(frame)
      console.log(frameToBase64(frame).length);
   }, [])
